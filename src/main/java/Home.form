@@ -191,7 +191,7 @@
             <Component class="javax.swing.JLabel" name="jLabel1">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\Nabil Newaz\Documents\NetBeansProjects\BillCalculatorBD\image\InUiImage.png"/>
+                  <Image iconType="1" name="https://raw.githubusercontent.com/NabilNewaz/BillCalculatorBD/master/image/InUiImage.png"/>
                 </Property>
               </Properties>
             </Component>

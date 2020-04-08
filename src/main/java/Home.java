@@ -1,4 +1,5 @@
 
+import java.awt.Toolkit;
 import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.util.Date;
@@ -88,13 +89,24 @@ public class Home extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Bill Calculator BD");
+        setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Nabil Newaz\\Documents\\NetBeansProjects\\BillCalculatorBD\\image\\TitelImage.png"));
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setToolTipText("");
 
         jPanel4.setBackground(new java.awt.Color(43, 174, 102));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Nabil Newaz\\Documents\\NetBeansProjects\\BillCalculatorBD\\image\\InUiImage.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.JLabel() {
+            public javax.swing.Icon getIcon() {
+                try {
+                    return new javax.swing.ImageIcon(
+                        new java.net.URL("https://raw.githubusercontent.com/NabilNewaz/BillCalculatorBD/master/image/InUiImage.png")
+                    );
+                } catch (java.net.MalformedURLException e) {
+                }
+                return null;
+            }
+        }.getIcon());
 
         jLabel2.setFont(new java.awt.Font("Roboto", 1, 36)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
