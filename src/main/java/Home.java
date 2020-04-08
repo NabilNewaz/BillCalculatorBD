@@ -1,5 +1,7 @@
 
-import java.awt.Toolkit;
+import java.awt.Image;
+import java.net.URL;
+import javax.imageio.ImageIO;
 import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.util.Date;
@@ -89,7 +91,16 @@ public class Home extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Bill Calculator BD");
-        setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\Nabil Newaz\\Documents\\NetBeansProjects\\BillCalculatorBD\\image\\TitelImage.png"));
+        Image image = null;
+        try {
+
+        URL url = new URL("https://raw.githubusercontent.com/NabilNewaz/BillCalculatorBD/master/image/TitelImage.png");
+        image = ImageIO.read(url);
+
+        } catch (Exception exp) {
+        exp.printStackTrace();
+        }
+        setIconImage(image);
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setToolTipText("");
