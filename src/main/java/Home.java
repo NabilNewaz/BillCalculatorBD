@@ -651,57 +651,58 @@ public class Home extends javax.swing.JFrame {
         }
         
         //Calculate Bill
-        double Amount, Dmd_Charge, Vat, Service_Charge, Principal_Amount,Principal_Amount_Total, Total_Amount;
+        double Amount, Dmd_Charge, Vat, Service_Charge,Rebate, Principal_Amount,Principal_Amount_Total, Total_Amount;
         
         if (TotalUnit < 50)
 	  	{
-	        Amount = TotalUnit * 3.50; 
+	        Amount = TotalUnit * 3.75; 
 	  	} 
 		else if (TotalUnit <= 75)
 	  	{
 	  		// For the First Fifty Units Charge = 175 (50 * 3.50)
 	  		// Next, we are removing those 50 units from total units
-	  		Amount = 175 + ((TotalUnit - 50 ) * 4.00);	
+	  		Amount = 175 + ((TotalUnit - 50 ) * 4.19);	
 	  	}
 	  	else if (TotalUnit <= 200)
 	  	{
 	  		// First 75 Units charge = 300 (75 * 4.00)
 	  		// Next, we are removing those 75 units from total units
-	  		Amount = 300 + ((TotalUnit - 75 ) * 5.45);
+	  		Amount = 300 + ((TotalUnit - 75 ) * 5.72);
 	  	}
 		else if (TotalUnit <= 300)
 	  	{
 	  		// First 75 Units charge = 300 (75 * 4.00) and 200 - 75 is 681.28
 	  		// Next, we are removing those 200 units from total units
-	  		Amount = 300 + 681.25 +((TotalUnit - 200 ) * 5.70);	
+	  		Amount = 300 + 681.25 +((TotalUnit - 200 ) * 6.00);	
 	  	}
 		else if (TotalUnit <= 400)
 	  	{
 	  		// First 75 Units charge = 300 (75 * 4.00), 200 - 75 is 681.28 and 300 - 200 is 570 
 	  		// Next, we are removing those 300 units from total units
-	  		Amount = 300 + 681.25 + 570 +((TotalUnit - 300 ) * 6.02);
+	  		Amount = 300 + 681.25 + 570 +((TotalUnit - 300 ) * 6.34);
 	  	}
 		else if (TotalUnit <= 600)
 	  	{
 	  		// First 75 Units charge = 300 (75 * 4.00), 200 - 75 is 681.28, 300 - 200 is 570 and 400 - 300 in 602
 	  		// Next, we are removing those 400 units from total units
-	  		Amount = 300 + 681.25 + 570+ 602 +((TotalUnit - 400 ) * 9.30);
+	  		Amount = 300 + 681.25 + 570+ 602 +((TotalUnit - 400 ) * 9.94);
 	  	}
 	  	else
 	  	{
 	  		// First 75 Units charge = 300 (75 * 4.00), 200 - 75 is 681.28, 300 - 200 is 570, 400 - 300 is 602 and 600 - 400 is 1860
 	  		//Next, we are removing those 600 units from total units */ 
-			Amount = 300 + 681.25 + 570+ 602 + 1860 +((TotalUnit - 600 ) * 10.70);
+			Amount = 300 + 681.25 + 570+ 602 + 1860 +((TotalUnit - 600 ) * 11.46);
 		}
 		
 	Dmd_Charge = 25;
 	Principal_Amount = Amount + Dmd_Charge;
 	Vat = Principal_Amount * 0.05;
+        Rebate = Principal_Amount * 0.01;
 	Service_Charge = Principal_Amount * 0.01;
         
         Principal_Amount_Total = Principal_Amount + Service_Charge;
 		
-	Total_Amount = Principal_Amount + Vat + Service_Charge;
+	Total_Amount = Principal_Amount + Vat + Rebate + Service_Charge;
         
         //Convert To String
         String NetAmmount = String.valueOf(new DecimalFormat("##.##").format(Amount));
